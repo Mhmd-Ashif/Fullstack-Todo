@@ -55,6 +55,8 @@ export function InputComponent(props) {
           }).then(async function (res) {
             const data = await res.json();
             props.fetched(data);
+            setTitle("");
+            setDescription("");
           });
         }}
       >
