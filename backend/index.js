@@ -5,11 +5,13 @@ const { PostTodo, UpdateTodo } = require("./types");
 const { todo } = require("./Database/db");
 const app = express();
 
-app.use(cors({
-  origin : ["https://fullstack-todo-orcin.vercel.app/"],
-  methods : ["POST","GET"],
-  credentials : true
-}));
+app.use(
+  cors({
+    origin: ["https://fullstack-todo-iota.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.post("/todo", async (req, res) => {
