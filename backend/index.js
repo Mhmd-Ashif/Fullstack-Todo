@@ -7,13 +7,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://fullstack-todo-iota.vercel.app/"],
+    origin: ["https://fullstack-todo-frontend-kappa.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
 );
 app.use(express.json());
-
 
 app.post("/todo", async (req, res) => {
   const input = PostTodo.safeParse(req.body);
