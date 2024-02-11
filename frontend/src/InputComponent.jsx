@@ -43,7 +43,7 @@ export function InputComponent(props) {
           textAlign: "center",
         }}
         onClick={() => {
-          fetch("http://localhost:3000/todo", {
+          fetch("https://fullstack-todo-iota.vercel.app/todo", {
             method: "POST",
             headers: {
               "Content-type": "application/json",

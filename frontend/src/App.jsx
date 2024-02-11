@@ -11,7 +11,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   // const [isReqSend, setReqSend] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:3000/todos").then(async function (res) {
+    fetch("https://fullstack-todo-iota.vercel.app/todos").then(async function (res) {
       const data = await res.json();
       setTodos(data);
     });
@@ -19,7 +19,7 @@ function App() {
 
   function fetched(data) {
     if (data) {
-      fetch("http://localhost:3000/todos").then(async function (res) {
+      fetch("https://fullstack-todo-iota.vercel.app/todos").then(async function (res) {
         const data = await res.json();
         setTodos(data);
       });
@@ -29,7 +29,7 @@ function App() {
   }
 
   async function completed(id) {
-    const putData = await fetch("http://localhost:3000/completed", {
+    const putData = await fetch("https://fullstack-todo-iota.vercel.app/completed", {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
