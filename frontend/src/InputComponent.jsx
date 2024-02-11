@@ -6,6 +6,7 @@ export function InputComponent(props) {
   return (
     <div>
       <input
+        id="title"
         type="text"
         placeholder="title"
         style={{
@@ -21,6 +22,7 @@ export function InputComponent(props) {
       ></input>
       <br></br>
       <input
+        id="description"
         type="text"
         placeholder="description"
         style={{
@@ -43,6 +45,8 @@ export function InputComponent(props) {
           textAlign: "center",
         }}
         onClick={() => {
+          document.getElementById("title").value = "";
+          document.getElementById("description").value = "";
           fetch("https://fullstack-todo-iota.vercel.app/todo", {
             method: "POST",
             headers: {
@@ -55,8 +59,6 @@ export function InputComponent(props) {
           }).then(async function (res) {
             const data = await res.json();
             props.fetched(data);
-            setTitle("");
-            setDescription("");
           });
         }}
       >
