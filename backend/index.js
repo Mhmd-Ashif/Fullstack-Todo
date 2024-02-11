@@ -14,6 +14,10 @@ app.use(
 );
 app.use(express.json());
 
+app.get("/",function(req,res){
+res.send("Displaying")
+})
+
 app.post("/todo", async (req, res) => {
   const input = PostTodo.safeParse(req.body);
   if (input.success) {
