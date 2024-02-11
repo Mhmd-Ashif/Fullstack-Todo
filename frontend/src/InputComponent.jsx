@@ -56,8 +56,6 @@ export function InputComponent(props) {
             const data = await res.json();
             props.fetched(data);
           });
-          setTitle("");
-          setDescription("");
         }}
       >
         Create Todo
