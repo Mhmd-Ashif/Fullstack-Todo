@@ -14,7 +14,6 @@ export function InputComponent(props) {
           textAlign: "center",
           width: 250,
         }}
-        value={title}
         onChange={function (e) {
           const value = e.target.value;
           setTitle(value);
@@ -30,7 +29,6 @@ export function InputComponent(props) {
           textAlign: "center",
           width: 250,
         }}
-        value={description}
         onChange={function (e) {
           const value = e.target.value;
           setDescription(value);
@@ -58,6 +56,8 @@ export function InputComponent(props) {
             const data = await res.json();
             props.fetched(data);
           });
+          setTitle("");
+          setDescription("");
         }}
       >
         Create Todo
