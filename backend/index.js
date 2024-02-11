@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://fullstack-todo-frontend-kappa.vercel.app"],
+    origin: ["https://fullstack-todo-frontend-kappa.vercel.app/"],
     methods: ["POST", "GET", "PUT"],
     credentials: true,
   })
